@@ -1,13 +1,14 @@
-import { Formik, Form } from 'formik'
-import * as Yup from 'yup'
-import Input from '../Input'
+import { memo } from 'react';
+import { Formik, Form } from 'formik';
+import * as Yup from 'yup';
+import Input from '../Input';
 
 const MyForm = ({ onSubmit }) => {
-  console.log('renderizando my form')
+  console.log('renderizando my form');
   const handleSubmit = (values, { resetForm }) => {
-    onSubmit(values)
-    resetForm()
-  }
+    onSubmit(values);
+    resetForm();
+  };
 
   return (
     <Formik
@@ -24,10 +25,10 @@ const MyForm = ({ onSubmit }) => {
       <Form>
         <Input name="name" label="Nombre" />
         <Input name="lastname" label="Apellido" />
-        <button type='submit'>Enviar</button>
+        <button type="submit">Enviar</button>
       </Form>
     </Formik>
-  )
-}
+  );
+};
 
-export default MyForm
+export default memo(MyForm);
